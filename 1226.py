@@ -7,7 +7,7 @@ import re
 
 class addressbook(object):
     """通讯录保存模式
-    win10下有gbk utf8问题，还没完全解决
+    win10:以gbk 编码保存文档就可以正常阅读
         {
             "1": {
                 "姓名": "Envy",
