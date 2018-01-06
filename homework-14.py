@@ -86,9 +86,7 @@ class soldier(roleplay):
         self.name = name
 
 
-# 游戏运行 yx -- 英雄  xb -- 小兵
-def each_round(yx, xb):
-    pass
+# 以下测试
 chse = input('请选择你的角色[1.英雄  2.士兵 (Enter退出)]:')
 while chse in set(['1', '2', '']):
     if chse == '1':
