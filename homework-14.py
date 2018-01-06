@@ -14,7 +14,8 @@ class roleplay(object):
     攻击：attk()
     """
 
-    def __init__(self, hp, dmge, mov):
+    def __init__(self, name, hp, dmge, mov):
+        self.name = name
         self.hp = hp
         self.dmge = dmge
         self.mov = mov
@@ -56,10 +57,9 @@ class hero(roleplay):
     魔法值：200
     """
 
-    def __init__(self, mp=200, name='yingxiong'):
-        super(hero, self).__init__(hp=500, dmge=50, mov=25)
+    def __init__(self, mp=200):
+        super(hero, self).__init__('Yingxiong', 500, 50, 25)
         self.mp = mp
-        self.name = name
 
     def __str__(self):
         return ('生命值：{}|攻击力：{}|移动速度：{}|魔法值：{}').format(self.hp, self.dmge, self.mov, self.mp)
@@ -81,9 +81,8 @@ class soldier(roleplay):
     移动速度：10
     """
 
-    def __init__(self, name='shibing'):
-        super(soldier, self).__init__(hp=150, dmge=20, mov=10)
-        self.name = name
+    def __init__(self):
+        super(soldier, self).__init__('Xiaobing', 150, 20, 10)
 
 
 # 以下测试
