@@ -3,6 +3,7 @@
 # @Author  : brkstone
 import json
 import re
+import os
 
 
 class addressbook(object):
@@ -23,7 +24,7 @@ class addressbook(object):
     """
 
     def __init__(self):
-        self.path = 'C:\\Users\\D\\Desktop\\address_list.json'  # 联系人文件存放路径
+        self.path = self.ckfileexist()  # 联系人文件存放路径
         self.indent_num = 4
         self.dictdata = {"姓名": "", "手机": "", "邮箱": ""}
 
@@ -110,6 +111,7 @@ class addressbook(object):
         while re.search('\w{1,15}', name) == None:
             # 姓名匹配字母下划线检查
             name = input('请重新输入姓名，只允许字符下划线:')
+            name = name.encode('gbk')
         # print(name)
         return name
 
@@ -127,6 +129,16 @@ class addressbook(object):
             while re.search('(\w+(.)?\w+)@(\w+(.)?\w+)', mail_add) == None:
                 mail_add = input('请重新输入邮箱')
         return mail_add
+
+# 检查存储文件是否存在，否则新建
+    def ckfileexist(self):
+        cdir = os.path.abspath('.')  # 当前路径  绝对路径
+        filepath = cdir + '/testfile/address_list.json'  # 存储文件路径
+        # filepath存在则返回，否则创建一个存储文件
+        if not os.path.exists(filepath):
+            with open(filepath, mode='w', encoding='gbk') as fe:
+                fe.write('{}')
+        return filepath
 
 # 请选择：1.录入 2.查找 3.全部显示 4.删除 (回车退出)   限制从1-2-3-4 Enter 中输入
 
