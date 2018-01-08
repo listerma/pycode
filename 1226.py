@@ -133,7 +133,12 @@ class addressbook(object):
 # 检查存储文件是否存在，否则新建
     def ckfileexist(self):
         cdir = os.path.abspath('.')  # 当前路径  绝对路径
-        filepath = cdir + '/testfile/address_list.json'  # 存储文件路径
+        filename = 'address_list.json'
+        try:
+            os.mkdir('testfile')  # 当前路径下创建名为testfile的文件夹;存在则略过
+        except Exception as e:
+            pass
+        filepath = os.path.join(os.path.join(cdir, 'testfile'), filename)  # 存储文件路径
         # filepath存在则返回，否则创建一个存储文件
         if not os.path.exists(filepath):
             with open(filepath, mode='w', encoding='gbk') as fe:
