@@ -32,7 +32,8 @@ class addressbook(object):
         name = self.input_name()
         rddata = self.opf()
         # print('this is rddata:', rddata)
-        while [rd_content for rd_content in rddata.values() if rd_content["姓名"] == name]:
+        while [rd_content for rd_content in rddata.values() if
+               rd_content["姓名"] == name]:
             print('哎...撞名啦，谁丑谁尴尬@-@\n')
             name = self.input_name()
         else:
@@ -56,13 +57,16 @@ class addressbook(object):
         inkey = input('查询关键字:')
         for key in rddata.keys():
             if str(rddata[key]).find(inkey) != -1:
-                print('{} {} {} {}'.format(key, rddata[key]["姓名"], rddata[key]["手机"], rddata[key]["邮箱"]))
+                print('{} {} {} {}'.format(
+                    key, rddata[key]["姓名"],
+                    rddata[key]["手机"], rddata[key]["邮箱"]))
     # 显示所有联系人
 
     def showall(self):
         rddata = self.opf()
         for i in rddata:
-            print('{} {} {} {}'.format(i, rddata[i]["姓名"], rddata[i]["手机"], rddata[i]["邮箱"]))
+            print('{} {} {} {}'.format(
+                i, rddata[i]["姓名"], rddata[i]["手机"], rddata[i]["邮箱"]))
     # 删除对应ID的联系人
 
     def del_id(self):
@@ -82,7 +86,7 @@ class addressbook(object):
                             wrdata[str(toint - 1)] = rddata[i]
                     self.wrf(wrdata)
                     print('删除联系人成功。')
-                except:
+                except KeyError:
                     print('不存在此ID联系人！')
             else:
                 print('已经取消删除。')
@@ -108,7 +112,7 @@ class addressbook(object):
 
     def input_name(self):
         name = input('姓名:')
-        while re.search('\w{1,15}', name) == None:
+        while re.search('\w{1,15}', name) is None:
             # 姓名匹配字母下划线检查
             name = input('请重新输入姓名，只允许字符下划线:')
             name = name.encode('gbk')
@@ -117,7 +121,7 @@ class addressbook(object):
 
     def input_phone(self):
         phonenum = input('手机:')
-        while re.search('^1\d{10,}', phonenum) == None:  # 简单匹配以1开头的11位手机号码
+        while re.search('^1\d{10,}', phonenum) is None:  # 简单匹配以1开头的11位手机号码
             phonenum = input('>暂时不支持地球外运营商<\n请重新输入手机号码:')
         return phonenum
 
@@ -126,7 +130,7 @@ class addressbook(object):
         while mail_add == "":
             return mail_add
         else:
-            while re.search('(\w+(.)?\w+)@(\w+(.)?\w+)', mail_add) == None:
+            while re.search('(\w+(.)?\w+)@(\w+(.)?\w+)', mail_add) is None:
                 mail_add = input('请重新输入邮箱')
         return mail_add
 
@@ -138,7 +142,8 @@ class addressbook(object):
             os.mkdir('testfile')  # 当前路径下创建名为testfile的文件夹;存在则略过
         except Exception as e:
             pass
-        filepath = os.path.join(os.path.join(cdir, 'testfile'), filename)  # 存储文件路径
+        # 存储文件路径
+        filepath = os.path.join(os.path.join(cdir, 'testfile'), filename)
         # filepath存在则返回，否则创建一个存储文件
         if not os.path.exists(filepath):
             with open(filepath, mode='w', encoding='gbk') as fe:
@@ -151,11 +156,12 @@ class addressbook(object):
 def choose():
     try:
         tempin = eval(input('请选择：1.录入 2.查找 3.全部显示 4.删除 (回车退出)\n'))
-        while re.search('[1234]', str(tempin)) == None:
+        while re.search('[1234]', str(tempin)) is None:
             tempin = eval(input('请从1/2/3/4中选择(回车退出):'))
-    except:
+    except SyntaxError:
         tempin = ''
     return tempin
+
 
 action = addressbook()
 chs = choose()
