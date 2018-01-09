@@ -62,7 +62,9 @@ class hero(roleplay):
         self.mp = mp
 
     def __str__(self):
-        return ('生命值：{}|攻击力：{}|移动速度：{}|魔法值：{}').format(self.hp, self.dmge, self.mov, self.mp)
+        return (
+            '生命值：{}|攻击力：{}|移动速度：{}|魔法值：{}'
+        ).format(self.hp, self.dmge, self.mov, self.mp)
 
     def cast_attk(self, role):
         # 设定 魔法攻击/60mp
