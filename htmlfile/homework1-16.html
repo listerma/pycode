@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>HOMEWORK 1.19</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+body {
+    background-image:url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516208821382&di=dd74dc98c2329b215bbf7f84d3a48d36&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-11-27%2F5a1bb82aa6ab3.jpg");
+    background-size: cover;
+    -webkit-background-size: cover;   
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+</style>
+</head>
+<body>
+    <h1 align="center">HOMEWORK 1.19</h1>
+    <form action="" method="">
+        <table align="center">
+            <tr>
+                <td align="right">
+                    <font color="red">
+                        *
+                    </font>
+                用户
+                </td>
+                <td>
+                   <input type="text" name="用户" maxlength="12" placeholder="最多12个字符" required="required"> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <font color="red">
+                        *
+                    </font>
+                    密码
+                </td>
+                <td>
+                    <input id="originpass" type="password" name="密码"  maxlength="16" placeholder="限制最多16位" 
+                    required="required">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <font color="red">*</font>
+                    确认密码
+                </td>
+                <td>
+                    <input id="secondpass" type="password" name="确认密码"  required="required" onblur="pwissame()">
+                </td>
+            </tr>
+            <tr align="center">
+                <td align="center" colspan="2">
+                    <input type="submit" value="注册">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript">
+        function pwissame(){
+            // alert("检测开始");
+            try{
+                var sec = document.getElementById("secondpass").value;
+                // alert(sec);
+                var ori = document.getElementById("originpass").value;
+                // alert(ori);
+                if (ori==sec) {
+                    document.getElementById("originpass").style.color="green";
+                    document.getElementById("secondpass").style.color="green";
+                    flag = true;} 
+                else {
+                    document.getElementById("secondpass").style.color="red";
+                    alert("密码输入不同！")
+                    flag = false;}
+                return flag;
+            }
+            catch(err){
+                alert(err);
+            }
+        }
+    </script>
+</body>
+</html>
