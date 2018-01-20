@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 import requests
 import re
 import time
+'''爬取8hr 13页所有段子，包括段子内容、段子作者、作者性别和年龄、”好笑” 数、评论数。
+将以上信息存入 txt 文件。'''
 
 
 def write_data(name, sex, age, gut, stats, stats_cmt):
