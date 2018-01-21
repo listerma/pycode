@@ -54,7 +54,6 @@ def dealmv(originfile):
                 with open('mv-list.txt', 'a', encoding='utf-8') as ftem:
                     ftem.write(singlemv)
         except Exception as e:
-            pass
             # print('bad apple：', e)  # 不成功的暂不处理
             print('{}至{}获取失败！'.format(i + 1, i + 25))
         time.sleep(randint(1, 3))
