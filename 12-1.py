@@ -6,10 +6,10 @@ import threading
 import os
 import re
 from bs4 import BeautifulSoup
-import lxml
 import progressbar
 
 # 根据地址下载图片
+'''糗事百科热图下载'''
 
 
 def download(url):
@@ -72,7 +72,8 @@ def beforefinish(path):
         print('下载完成!')
 
 
-myhead = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"}
+myhead = {"User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) /AppleWebKit/537.36 ( /KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"}
 picurl = 'https://www.qiushibaike.com/imgrank/page/{}/'
 # 在当前位置新建一个picsave文件夹用于存放下载的图片
 f_curdir = os.getcwd()
