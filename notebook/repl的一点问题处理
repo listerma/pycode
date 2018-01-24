@@ -1,0 +1,13 @@
+2018-01-24
+ST3 在win10 上的sublimerepl output 大量数据时会假死很长时间，不能忍。。。
+在github  找到一个方法<https://github.com/wuub/SublimeREPL/issues/469>解决，但还是
+有个错误导致无法输出完整,这里不知道具体原因，考虑代码片断没有处理具体数据只判断bool，
+用一个try处理，测试案例中可以完整输出。
+‘太糟了，改天弄个模板’
+code：
+================
+    def update_view_loop(self):
+        try:
+            is_still_working = self.handle_repl_output()   #NoneType ERROR here,i dont know why
+        except Exception as e:                      #so i add a try---except,it prints to end in my py
+            is_still_working = True
