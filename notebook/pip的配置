@@ -1,0 +1,9 @@
+windows 10 
+c:\users\xxx\下新建pip文件夹，新建pip.ini
+pip.ini 写入：
+ [global]
+ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+ format=columns
+
+ 1:改用清华源 ，还有别的源，国内速度快；
+ 2:格式化pip list 输出；不设置会有warning
