@@ -3,3 +3,5 @@
 test.ico
 testfile/address_list.json
 /Inconsolata/
+font/
+.DS_Store
