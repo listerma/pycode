@@ -5,3 +5,5 @@ testfile/address_list.json
 /Inconsolata/
 font/
 .DS_Store
+testbook/test.py
+.gitignore
