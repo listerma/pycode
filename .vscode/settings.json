@@ -16,7 +16,7 @@
       },
       "headInsertLine": {
         "php": 2,
-        "py": 2
+        "python": 2
       }
     },
     "fileheader.cursorMode": {
