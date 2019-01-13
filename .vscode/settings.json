@@ -4,12 +4,32 @@
     "python.pythonPath": "/Users/yuan/anaconda3/bin/python",
     // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
     "python.formatting.provider": "yapf",
-      // By default, create file  username
-    "fileheader.Author": "kinston.ding",
+    "fileheader.configObj": {
+      "createFileTime": true,
+      "autoAdd": true,
+      "autoAlready": true,
+      "annotationStr": {
+        "head": "/*",
+        "middle": " * @",
+        "end": " */",
+        "use": true
+      },
+      "headInsertLine": {
+        "php": 2,
+        "py": 2
+      }
+    },
+    "fileheader.cursorMode": {
+      "description": "",
+      "param": "",
+      "return": ""
 
-    // By default, update file  username.
-    "fileheader.LastModifiedBy": "kinston.ding",
-
-    // By default, common template. Do not modify it!!!!!
-     "fileheader.tpl": "/*\r\n * @Author: {author} \r\n * @Date: {createTime} \r\n * @Last Modified by:   {lastModifiedBy} \r\n * @Last Modified time: {updateTime} \r\n */\r\n"
+    },
+    "fileheader.customMade": {
+      "Description": "",
+      "Author": "kinston.ding",
+      "Date": "Do not edit",
+      "LastEditors": "kinston.ding",
+      "LastEditTime": "Do not edit"
+    },
 }
