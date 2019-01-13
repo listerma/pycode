@@ -1,7 +1,7 @@
 {
     "python.linting.pylintEnabled": true,
     "editor.fontSize": 16,
-    "python.pythonPath": "python",
+    "python.pythonPath": "/Users/yuan/anaconda3/bin/python",
     // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
     "python.formatting.provider": "yapf",
 }
