@@ -32,4 +32,6 @@
       "LastEditors": "kinston.ding",
       "LastEditTime": "Do not edit"
     },
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.autopep8Path": "autopep8",
 }
